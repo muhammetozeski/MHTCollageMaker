@@ -1,0 +1,17 @@
+D:\KodlamaProjeleri\c#\MHTCollageMaker\MHTCollageMaker\bin\Debug\net6.0-windows\MHTCollageMaker.exe
+D:\KodlamaProjeleri\c#\MHTCollageMaker\MHTCollageMaker\bin\Debug\net6.0-windows\MHTCollageMaker.deps.json
+D:\KodlamaProjeleri\c#\MHTCollageMaker\MHTCollageMaker\bin\Debug\net6.0-windows\MHTCollageMaker.runtimeconfig.json
+D:\KodlamaProjeleri\c#\MHTCollageMaker\MHTCollageMaker\bin\Debug\net6.0-windows\MHTCollageMaker.dll
+D:\KodlamaProjeleri\c#\MHTCollageMaker\MHTCollageMaker\bin\Debug\net6.0-windows\MHTCollageMaker.pdb
+D:\KodlamaProjeleri\c#\MHTCollageMaker\MHTCollageMaker\obj\Debug\net6.0-windows\MHTCollageMaker.csproj.AssemblyReference.cache
+D:\KodlamaProjeleri\c#\MHTCollageMaker\MHTCollageMaker\obj\Debug\net6.0-windows\MHTCollageMaker.Form1.resources
+D:\KodlamaProjeleri\c#\MHTCollageMaker\MHTCollageMaker\obj\Debug\net6.0-windows\MHTCollageMaker.csproj.GenerateResource.cache
+D:\KodlamaProjeleri\c#\MHTCollageMaker\MHTCollageMaker\obj\Debug\net6.0-windows\MHTCollageMaker.GeneratedMSBuildEditorConfig.editorconfig
+D:\KodlamaProjeleri\c#\MHTCollageMaker\MHTCollageMaker\obj\Debug\net6.0-windows\MHTCollageMaker.AssemblyInfoInputs.cache
+D:\KodlamaProjeleri\c#\MHTCollageMaker\MHTCollageMaker\obj\Debug\net6.0-windows\MHTCollageMaker.AssemblyInfo.cs
+D:\KodlamaProjeleri\c#\MHTCollageMaker\MHTCollageMaker\obj\Debug\net6.0-windows\MHTCollageMaker.csproj.CoreCompileInputs.cache
+D:\KodlamaProjeleri\c#\MHTCollageMaker\MHTCollageMaker\obj\Debug\net6.0-windows\MHTCollageMaker.dll
+D:\KodlamaProjeleri\c#\MHTCollageMaker\MHTCollageMaker\obj\Debug\net6.0-windows\refint\MHTCollageMaker.dll
+D:\KodlamaProjeleri\c#\MHTCollageMaker\MHTCollageMaker\obj\Debug\net6.0-windows\MHTCollageMaker.pdb
+D:\KodlamaProjeleri\c#\MHTCollageMaker\MHTCollageMaker\obj\Debug\net6.0-windows\MHTCollageMaker.genruntimeconfig.cache
+D:\KodlamaProjeleri\c#\MHTCollageMaker\MHTCollageMaker\obj\Debug\net6.0-windows\ref\MHTCollageMaker.dll

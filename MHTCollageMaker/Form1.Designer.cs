@@ -29,57 +29,69 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.MergeButton = new System.Windows.Forms.Button();
-            this.DropLabel = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.SuspendLayout();
+            MergeButton = new Button();
+            DropLabel = new Label();
+            richTextBox1 = new RichTextBox();
+            IsVerticalCheckBox = new CheckBox();
+            SuspendLayout();
             // 
             // MergeButton
             // 
-            this.MergeButton.Location = new System.Drawing.Point(12, 12);
-            this.MergeButton.Name = "MergeButton";
-            this.MergeButton.Size = new System.Drawing.Size(464, 39);
-            this.MergeButton.TabIndex = 0;
-            this.MergeButton.Text = "Merge İmages";
-            this.MergeButton.UseVisualStyleBackColor = true;
-            this.MergeButton.Click += new System.EventHandler(this.MergeButton_Click);
+            MergeButton.Location = new Point(12, 12);
+            MergeButton.Name = "MergeButton";
+            MergeButton.Size = new Size(464, 39);
+            MergeButton.TabIndex = 0;
+            MergeButton.Text = "Merge İmages";
+            MergeButton.UseVisualStyleBackColor = true;
+            MergeButton.Click += MergeButton_Click;
             // 
             // DropLabel
             // 
-            this.DropLabel.AllowDrop = true;
-            this.DropLabel.AutoSize = true;
-            this.DropLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.DropLabel.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.DropLabel.Location = new System.Drawing.Point(91, 54);
-            this.DropLabel.Name = "DropLabel";
-            this.DropLabel.Size = new System.Drawing.Size(302, 56);
-            this.DropLabel.TabIndex = 1;
-            this.DropLabel.Text = "Put Folder Here";
-            this.DropLabel.DragDrop += new System.Windows.Forms.DragEventHandler(this.DropLabel_DragDrop);
-            this.DropLabel.DragEnter += new System.Windows.Forms.DragEventHandler(this.DropLabel_DragEnter);
+            DropLabel.AllowDrop = true;
+            DropLabel.AutoSize = true;
+            DropLabel.BorderStyle = BorderStyle.Fixed3D;
+            DropLabel.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            DropLabel.Location = new Point(91, 54);
+            DropLabel.Name = "DropLabel";
+            DropLabel.Size = new Size(302, 56);
+            DropLabel.TabIndex = 1;
+            DropLabel.Text = "Put Folder Here";
+            DropLabel.DragDrop += DropLabel_DragDrop;
+            DropLabel.DragEnter += DropLabel_DragEnter;
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 113);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(464, 330);
-            this.richTextBox1.TabIndex = 7;
-            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            richTextBox1.Location = new Point(12, 113);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.ReadOnly = true;
+            richTextBox1.Size = new Size(464, 330);
+            richTextBox1.TabIndex = 7;
+            richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            // 
+            // IsVerticalCheckBox
+            // 
+            IsVerticalCheckBox.AutoSize = true;
+            IsVerticalCheckBox.Location = new Point(404, 59);
+            IsVerticalCheckBox.Name = "IsVerticalCheckBox";
+            IsVerticalCheckBox.Size = new Size(80, 44);
+            IsVerticalCheckBox.TabIndex = 8;
+            IsVerticalCheckBox.Text = "Merge\r\nVertical";
+            IsVerticalCheckBox.UseVisualStyleBackColor = true;
+            IsVerticalCheckBox.CheckedChanged += IsVerticalCheckBox_CheckedChanged;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(496, 455);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.DropLabel);
-            this.Controls.Add(this.MergeButton);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(496, 455);
+            Controls.Add(IsVerticalCheckBox);
+            Controls.Add(richTextBox1);
+            Controls.Add(DropLabel);
+            Controls.Add(MergeButton);
+            Name = "Form1";
+            Text = "Form1";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -87,5 +99,6 @@
         private Button MergeButton;
         private Label DropLabel;
         private RichTextBox richTextBox1;
+        private CheckBox IsVerticalCheckBox;
     }
 }

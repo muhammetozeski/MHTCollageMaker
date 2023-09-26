@@ -50,7 +50,7 @@ namespace MHTCollageMaker
         /// <summary>
         /// print "first prompt" before every element and then print the element to RichTextBox1.<br></br>I prefered a short name to make it to use easier
         /// </summary>
-        void p(object firstPrompt,object[] Message)
+        void p(object firstPrompt, object[] Message)
         {
             foreach (object i in Message)
                 p(firstPrompt.ToString() + i.ToString());
@@ -62,8 +62,8 @@ namespace MHTCollageMaker
         void p<t, t2>(Dictionary<t, t2> Dict, bool keys = true)
 #pragma warning restore IDE1006 // Adlandýrma Stilleri
         {
-            if(keys)
-                foreach (var i in Dict.Keys.OfType<string>().ToArray()) 
+            if (keys)
+                foreach (var i in Dict.Keys.OfType<string>().ToArray())
                     p(i);
             else
                 foreach (var i in Dict.Values.OfType<string>().ToArray())
@@ -100,7 +100,7 @@ namespace MHTCollageMaker
 
         private void MergeButton_Click(object sender, EventArgs e)
         {
-            if(FolderPath != null)
+            if (FolderPath != null)
             {
                 SubFolders = Directory.GetDirectories(FolderPath, "*", SearchOption.AllDirectories).ToList();
                 p(SubFolders);
@@ -117,7 +117,7 @@ namespace MHTCollageMaker
                 List<List<string>> images = new List<List<string>>();
                 for (int i = 0; i < SubFolders.Count; i++)
                 {
-                    //delete debug messages:
+                    //TODO: delete debug messages:
                     var ImagePaths = GetAllPicPathsInFolder(SubFolders[i]);
                     if (ImagePaths != null && ImagePaths.Length != 0)
                     {
@@ -133,7 +133,7 @@ namespace MHTCollageMaker
                         );/**/
                 //TODO: make this optional for user and more clear.
                 var PathOfAllCollagesV2 = Path.GetDirectoryName(FolderPath) + "\\" + PathOfAllCollages;
-                
+
                 foreach (var i in images)
                 {
                     CreateCollage(i.ToArray(), PathOfAllCollagesV2, PrefixForCollageFileName +
@@ -149,7 +149,7 @@ namespace MHTCollageMaker
         /// returns all pictures in a folder as bitmap and returns their paths.
         /// </summary>
         /// <param name="FolderPath">The folder path</param>
-        (string[]? ,Bitmap[]?) GetAllPicsInFolder(string FolderPath)
+        (string[]?, Bitmap[]?) GetAllPicsInFolder(string FolderPath)
         {
             string[]? jpegFiles = Directory.GetFiles(FolderPath, "*" + ImageExtention, SearchOption.TopDirectoryOnly);
             Bitmap[]? bitmaps = new Bitmap[jpegFiles.Length];
@@ -170,7 +170,7 @@ namespace MHTCollageMaker
             if (jpegFiles.Length == 0) return null;
             int i = 0;
             jpegFiles.ToList().ForEach(x => p(++i + ".) JPG file added: " + Path.GetFileName(x)));
-            
+
             return jpegFiles;
         }
 
@@ -187,14 +187,19 @@ namespace MHTCollageMaker
             string Options = "-resize 1920x1104 -background white -geometry +0+0 -border 0x0")
         {
             //TODO: make options variable more optional and functional. i mean seperate the options. get them from user.
-            
+
+            if (IsVerticalCheckBox.Checked)
+            {
+                int imageCount = PathsOfImagesToCollage.Length;
+                Options += " -tile 1x" + imageCount;
+            }
 
             string PathsInOneLine = string.Join(" ", PathsOfImagesToCollage.Select(x => "\"" + x + "\""));
 
             string command = "montage" + " " + PathsInOneLine + " " + Options + " " + "\"" + CollagePathToSave + CollageFileName + "\"";
             //p("Given command: " + command);
             string _createPath = CollagePathToSave;
-            if (_createPath[_createPath.Length-1] == '\\')
+            if (_createPath[_createPath.Length - 1] == '\\')
                 _createPath = _createPath.Substring(0, _createPath.Length - 1);
             if (!Directory.Exists(_createPath))
                 Directory.CreateDirectory(_createPath);
@@ -213,15 +218,21 @@ namespace MHTCollageMaker
                 }
             };
             process.Start();/**/
+            p("using command: " + command);
             /*process.StandardInput.WriteLine(command);
             process.StandardInput.Flush();
             process.StandardInput.Close();
             p(process.StandardOutput.ReadToEnd());
             p("CLI Output:");/**/
-            
+
             /*p("process started:");
             Process.Start(command);
             p("process finished");/**/
+        }
+
+        private void IsVerticalCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
